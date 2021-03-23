@@ -3,7 +3,7 @@
   import { elasticOut, quintIn } from 'svelte/easing'
   import FaGithub from 'svelte-icons/fa/FaGithub.svelte'
   import FaTwitter from 'svelte-icons/fa/FaTwitter.svelte'
-  import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte'
+  import FaLinkedinIn from 'svelte-icons/fa/FaLinkedinIn.svelte'
   import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte'
   import siteMetaData from '../constants/siteMetaData'
 
@@ -27,7 +27,7 @@
       isLabelVisible: false,
     },
     {
-      icon: FaLinkedin,
+      icon: FaLinkedinIn,
       label: 'LinkedIn',
       link: siteMetaData.social.linkedin,
       isLabelVisible: false,
@@ -96,6 +96,12 @@
     display: grid;
     position: relative;
     margin: 0;
+    transition: transform 0.1s;
+    backface-visibility: hidden;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   .icon {
@@ -109,6 +115,6 @@
     font-size: large;
     white-space: nowrap;
     left: 100%;
-    top: 25%;
+    top: 15%;
   }
 </style>
